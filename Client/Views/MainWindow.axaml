@@ -17,11 +17,10 @@
 
     <Grid ColumnDefinitions="auto, *">
         <StackPanel>
-            <Button Content="Login" Command="{Binding SettingsCommand}"/>
+            <Button Content="Authentication" Command="{Binding AuthenticationCommand}"/>
             <Button Content="Chat" Command="{Binding ChatCommand}"/>
             <Button Content="Settings" Command="{Binding SettingsCommand}"/>
         </StackPanel>
         <ContentControl Content="{Binding CurrentViewModel}" Grid.Column="1"/>
     </Grid>
-
 </Window>

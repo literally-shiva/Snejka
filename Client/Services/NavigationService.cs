@@ -4,21 +4,21 @@ namespace Client.Services;
 
 public class NavigationService
 {
-    private readonly LoginViewModel _loginViewModel;
-    private readonly ChatViewModel _chatViewModel;
-    private readonly SettingsViewModel _settingsViewModel;
+    private readonly AuthenticationViewModel _authenticationVm;
+    private readonly ChatViewModel _chatVm;
+    private readonly SettingsViewModel _settingsVm;
 
 
     public NavigationService()
     {
-        _loginViewModel = new LoginViewModel();
-        _chatViewModel = new ChatViewModel();
-        _settingsViewModel = new SettingsViewModel();
+        _authenticationVm = new AuthenticationViewModel();
+        _chatVm = new ChatViewModel();
+        _settingsVm = new SettingsViewModel();
     }
 
-    public LoginViewModel GetLoginViewModel() => _loginViewModel;
+    public AuthenticationViewModel GetAuthenticationVm() => _authenticationVm;
 
-    public ChatViewModel GetChatViewModel() => _chatViewModel;
+    public ChatViewModel GetChatVm() => _chatVm;
 
-    public SettingsViewModel GetSettingsViewModel() => _settingsViewModel;
+    public SettingsViewModel GetSettingsVm() => _settingsVm;
 }
