@@ -6,15 +6,18 @@
     "configurations": [
         {
             "name": "Server",
-            "type": "dotnet",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Server/Server.csproj"
+            "program": "${workspaceFolder}/Server/bin/Debug/net10.0/Server.dll",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
         },
         {
             "name": "Client",
-            "type": "dotnet",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/Client/Client.csproj"
+            "program": "${workspaceFolder}/Client/bin/Debug/net10.0/Client.dll"
         }
     ],
     "compounds": [
