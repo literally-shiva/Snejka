@@ -1,8 +1,23 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Server;
+using Server.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+
+var connectionString = builder.Configuration.GetConnectionString("ConnectionString")
+    ?? throw new InvalidOperationException("ConnectionString не найден в конфигурации.");
+
+builder.Services.AddDbContext<SnejkaDbContext>(options => options.UseNpgsql(connectionString));
+
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -18,6 +33,8 @@ var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
+
+app.MapControllers();
 
 app.MapGet("/weatherforecast", () =>
 {
