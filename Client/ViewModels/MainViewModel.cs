@@ -12,18 +12,18 @@ public partial class MainViewModel : ViewModelBase
     {
         _navigationService = new NavigationService();
 
-        CurrentViewModel = _navigationService.GetAuthenticationVm();
+        CurrentViewModel = _navigationService.AuthenticationVm;
     }
 
     [ObservableProperty]
     public partial ViewModelBase CurrentViewModel { get; set; }
 
     [RelayCommand]
-    private void Authentication() => CurrentViewModel = _navigationService.GetAuthenticationVm();
+    private void Authentication() => CurrentViewModel = _navigationService.AuthenticationVm;
 
     [RelayCommand]
-    private void Chat() => CurrentViewModel = _navigationService.GetChatVm();
+    private void Chat() => CurrentViewModel = _navigationService.ChatVm;
 
     [RelayCommand]
-    private void Settings() => CurrentViewModel = _navigationService.GetSettingsVm();
+    private void Settings() => CurrentViewModel = _navigationService.SettingsVm;
 }
