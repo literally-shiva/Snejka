@@ -1,14 +1,15 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Client.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace Client.ViewModels;
 
 public partial class AuthenticationViewModel : ViewModelBase
 {
-    public AuthenticationViewModel()
+    public AuthenticationViewModel(AuthenticationService authenticationService)
     {
         LoginVm = new LoginViewModel();
-        RegisterVm = new RegisterViewModel();
+        RegisterVm = new RegisterViewModel(authenticationService);
     }
 
     public LoginViewModel LoginVm { get; }

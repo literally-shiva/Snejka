@@ -10,9 +10,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/Server/bin/Debug/net10.0/Server.dll",
             "preLaunchTask": "build",
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            }
+            "cwd": "${workspaceFolder}/Server",
+            "launchSettingsProfile": "http"
         },
         {
             "name": "Client",

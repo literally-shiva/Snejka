@@ -4,9 +4,9 @@ namespace Client.Services;
 
 public class NavigationService
 {
-    public NavigationService()
+    public NavigationService(AuthenticationService authenticationService)
     {
-        AuthenticationVm = new AuthenticationViewModel();
+        AuthenticationVm = new AuthenticationViewModel(authenticationService);
         ChatVm = new ChatViewModel();
         SettingsVm = new SettingsViewModel();
     }

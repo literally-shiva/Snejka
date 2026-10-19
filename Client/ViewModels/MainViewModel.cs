@@ -6,11 +6,11 @@ namespace Client.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    private NavigationService _navigationService;
+    private readonly NavigationService _navigationService;
 
-    public MainViewModel()
+    public MainViewModel(AuthenticationService authenticationService)
     {
-        _navigationService = new NavigationService();
+        _navigationService = new NavigationService(authenticationService);
 
         CurrentViewModel = _navigationService.AuthenticationVm;
     }
