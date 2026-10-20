@@ -8,7 +8,7 @@ namespace Client.Services;
 
 public sealed class AuthenticationService
 {
-    private const string RegisterEndpoint = "http://localhost:5104/api/Auth/register";
+    private const string RegisterEndpoint = "api/Auth/register";
     private readonly HttpClient _httpClient;
 
     public AuthenticationService(HttpClient httpClient)
